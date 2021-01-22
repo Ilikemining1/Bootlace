@@ -35,9 +35,9 @@ To install to device, enter the IP address of the device in Makefile, and run:
   
   followed by a reboot
   
-OR, to make an installable .deb file:
-
-  $ make deb
+OR, copy the application into the "deb" folder and use this command to make a .deb:
+ 
+  $ fakeroot dpkg-deb -Zgzip -b deb bootlace_2.1.7.deb
 
 
 
