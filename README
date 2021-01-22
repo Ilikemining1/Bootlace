@@ -7,9 +7,11 @@ Credits: Neonkoala, Kevin Elliott, marky, poorlad, nickp666, CPICH, Bluerise, ms
 
 Status: Release
 
-Requirements
+Requirements:
 
-This app requires OpeniBoot 0.1.3+
+Exact requirements unknown, but it builds with Xcode 4.2.1 on Lion + the iOS 3.1.2 SDK added on.
+A recent version of dpkg to build the .deb file
+
 
 Other requirements:
 * iOS 3.1.2 -> 4.1
@@ -17,18 +19,26 @@ Other requirements:
 * iPhone 3G, 2G or iPod Touch 1G
 * Bravery - my code is hardly the best :P
 
-To Compile
+To Compile:
 
-Make sure libcurl files have been copied from device or /usr on OS X to SDK folder. Also include the sys/reboot.h in the ARM root. Libraries must be built for ARM in XCode first too.
+Copy libcurl headers folder from your device into the PartialZip directory.  Use XCode to build libbz2 and libpartialzip.  Make sure the .a files are placed in build/Release-iphoneos/
+
+Then, run:
 
   $ make clean && make
+  
+Finally, you have two options:
 
-
-To Install To Device, enter the IP address of the device in Makefile, and run:
+To install to device, enter the IP address of the device in Makefile, and run:
 
   $ make install
+  
+  followed by a reboot
+  
+OR, to make an installable .deb file:
 
-Finally, reboot the device.
+  $ make deb
+
 
 
 License:
