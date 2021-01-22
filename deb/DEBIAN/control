@@ -1,0 +1,12 @@
+Author: Nick Dawson <nick@dawson.be>
+Maintainer: IlikeTech <spbach1234@gmail.com>
+Name: Bootlace
+Package: be.dawson.bootlace
+Depends: firmware(>= 3.1), curl (>= 7.19.4-6)
+Section: System
+Version: 2.1.7
+Architecture: iphoneos-arm
+Description: iDroid & OpeniBoot installation/config tool
+	Allows installation of iDroid and OpeniBoot. iPod touch 1, iPhone 2G, and 3G only! 3.1.2 - 4.2.1 supported. Blackra1n, redsn0w and PwnageTool supported
+dev: ndawson
+Icon: file:///Applications/Bootlace.app/Icon.png
