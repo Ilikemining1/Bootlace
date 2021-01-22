@@ -1,3 +1,6 @@
 build/**
+PartialZip/curl/**
 *.o
 .DS_Store
+Bootlace.xcodeproj/project.xcworkspace/**
+Bootlace.xcodeproj/xcuserdata/**

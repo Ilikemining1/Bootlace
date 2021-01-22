@@ -1,7 +1,7 @@
 Bootlace
 by Nick Dawson (Neonkoala)
 
-V2.1.6
+V2.1.7
 
 Credits: Neonkoala, Kevin Elliott, marky, poorlad, nickp666, CPICH, Bluerise, msftguy.
 
@@ -23,17 +23,13 @@ Make sure libcurl files have been copied from device or /usr on OS X to SDK fold
 
   $ make clean && make
 
-Make sure you have respiring:
 
-  $ make install_respring
-
-To Install To Device
+To Install To Device, enter the IP address of the device in Makefile, and run:
 
   $ make install
 
-Usage
+Finally, reboot the device.
 
-See http://www.idroidproject.org/wiki/Bootlace
 
 License:
 
