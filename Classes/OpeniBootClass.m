@@ -679,9 +679,9 @@ char endianness = 1;
 	
 	//Grab update plist	
 	if(sharedData.debugMode) {
-		opibUpdatePlistURL = [NSURL URLWithString:@"http://beta.neonkoala.co.uk/openiboot.plist"];
+		opibUpdatePlistURL = [NSURL URLWithString:@"http://repo.bibitech.cc/bootlace-files/beta/openiboot.plist"];
 	} else {
-		opibUpdatePlistURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://bootlace.me/%@/openiboot.plist", sharedData.bootlaceVersion]];
+		opibUpdatePlistURL = [NSURL URLWithString:@"http://repo.bibitech.cc/bootlace-files/openiboot.plist"];
 	}
 	sharedData.opibDict = [NSMutableDictionary dictionaryWithContentsOfURL:opibUpdatePlistURL];
 	
