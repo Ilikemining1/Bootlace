@@ -7,12 +7,12 @@ INSTALLFOLDER=$(PROJECTNAME).app
 IPHONE_IP=192.168.0.4
 
 SDKVER=3.1.2
-SDKROOT=/SDK/Platforms/iPhoneOS.platform
+SDKROOT=/Developer/Platforms/iPhoneOS.platform
 SDK=$(SDKROOT)/Developer/SDKs/iPhoneOS$(SDKVER).sdk
-SDKSIM=/SDK/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneOS$(SDKVER).sdk
+SDKSIM=/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneOS$(SDKVER).sdk
 
-CC=/SDK/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-gcc-4.2.1
-CPP=/SDK/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin9-g++-4.2.1
+CC=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-gcc-4.2 
+CPP=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/arm-apple-darwin10-llvm-g++-4.2 
 LD=$(CC)
 
 LDFLAGS += -framework CoreFoundation 
@@ -105,14 +105,11 @@ install: dist
 	scp Settings/Bootlace.plist root@$(IPHONE_IP):/Library/PreferenceLoader/Preferences/Bootlace.plist
 	scp -r $(BUILDDIR)/$(APPFOLDER) root@$(IPHONE_IP):/Applications/$(INSTALLFOLDER)
 	@echo "Application $(INSTALLFOLDER) installed, please respring iPhone"
-	ssh root@$(IPHONE_IP) 'respring && chmod +s /Applications/Bootlace.app/Bootlace'
+	ssh root@$(IPHONE_IP) 'chmod +s /Applications/Bootlace.app/Bootlace'
 
 uninstall:
 	ssh root@$(IPHONE_IP) 'rm -fr /Applications/$(INSTALLFOLDER); respring'
 	@echo "Application $(INSTALLFOLDER) uninstalled, please respring iPhone"
-
-install_respring:
-	scp respring_arm root@$(IPHONE_IP):/usr/bin/respring
 
 clean:
 	@rm -f $(SRCDIR)/*.o *.o
