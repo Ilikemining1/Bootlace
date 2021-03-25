@@ -3,25 +3,30 @@ by Nick Dawson (Neonkoala)
 
 V2.1.7
 
-Credits: Neonkoala, Kevin Elliott, marky, poorlad, nickp666, CPICH, Bluerise, msftguy.
+Credits: Neonkoala, Kevin Elliott, marky, poorlad, nickp666, CPICH, Bluerise, msftguy, IlikeTech.
 
 Status: Release
 
-Requirements:
+Devices Requirements:
+
+* iOS 3.1.2 -> 4.2.1
+* An internet connection for iDroid install/upgrade features
+* iPhone 3G, 2G or iPod Touch 1G
+* Being jailbroken with blackra1n, redsn0w, PwnageTool, or sn0wbreeze
+* Bravery - my code is hardly the best :P
+
+Known issues: 
+
+* On iOS 4.1 or above, Zephyr2 firmware fails to extract, meaning the device won't have working touch, at least while jailbroken with redsn0w.
+
+Compilation Requirements:
 
 Exact requirements unknown, but it builds with Xcode 4.2.1 on Lion + the iOS 3.1.2 SDK added on.
 A recent version of dpkg to build the .deb file
 
-
-Other requirements:
-* iOS 3.1.2 -> 4.1
-* An internet connection for iDroid install/upgrade features
-* iPhone 3G, 2G or iPod Touch 1G
-* Bravery - my code is hardly the best :P
-
 To Compile:
 
-Copy libcurl headers folder from your device into the PartialZip directory.  Use XCode to build libbz2 and libpartialzip.  Make sure the .a files are placed in build/Release-iphoneos/
+Copy libcurl headers folder from your device into the PartialZip directory.  Use XCode to build libbz2 and libpartialzip.  Make sure the .a files   are placed in build/Release-iphoneos/
 
 Then, run:
 
@@ -29,17 +34,16 @@ Then, run:
   
 Finally, you have two options:
 
-To install to device, enter the IP address of the device in Makefile, and run:
+To install to device, enter the IP address of the device in the Makefile, and run:
 
   $ make install
   
-  followed by a reboot
+followed by a reboot
+
   
-OR, copy the application into the "deb" folder and use this command to make a .deb:
+OR, copy the application into the "deb" folder, set ownership and file permissions and use the command to make a .deb:
  
-  $ fakeroot dpkg-deb -Zgzip -b deb bootlace_2.1.7.deb
-
-
+  $ sudo dpkg-deb -Zgzip -b deb bootlace.deb
 
 License:
 

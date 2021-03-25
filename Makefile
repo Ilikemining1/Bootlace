@@ -4,7 +4,7 @@ PROJECTNAME=Bootlace
 APPFOLDER=$(PROJECTNAME).app
 INSTALLFOLDER=$(PROJECTNAME).app
 
-IPHONE_IP=192.168.0.4
+IPHONE_IP=10.0.0.81
 
 SDKVER=3.1.2
 SDKROOT=/Developer/Platforms/iPhoneOS.platform
@@ -108,7 +108,7 @@ install: dist
 	ssh root@$(IPHONE_IP) 'chmod +s /Applications/Bootlace.app/Bootlace'
 
 uninstall:
-	ssh root@$(IPHONE_IP) 'rm -fr /Applications/$(INSTALLFOLDER); respring'
+	ssh root@$(IPHONE_IP) 'rm -fr /Applications/$(INSTALLFOLDER)'
 	@echo "Application $(INSTALLFOLDER) uninstalled, please respring iPhone"
 
 clean:
